@@ -12,3 +12,70 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
+# ----------------------------
+# Flutter / Dart
+# ----------------------------
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+
+# Generated files
+lib/generated/
+**/*.g.dart
+**/*.freezed.dart
+
+# ----------------------------
+# IDEs
+# ----------------------------
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+
+# ----------------------------
+# Android
+# ----------------------------
+android/.gradle/
+android/local.properties
+android/**/build/
+android/captures/
+android/.idea/
+
+# ----------------------------
+# iOS / macOS
+# ----------------------------
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Runner.xcworkspace/
+ios/Runner/GeneratedPluginRegistrant.*
+
+macos/Pods/
+macos/Flutter/ephemeral/
+macos/Flutter/GeneratedPluginRegistrant.*
+
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+
+# ----------------------------
+# Logs
+# ----------------------------
+*.log
+
+.metadata
