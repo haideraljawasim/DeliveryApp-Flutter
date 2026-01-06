@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const DeliveryApp());
+import 'di/AppModule.dart';
+
+void main() async {
+  await setupDI();
+  runApp(DeliveryApp());
 }
 
 class DeliveryApp extends StatelessWidget {
