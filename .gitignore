@@ -79,3 +79,8 @@ ehthumbs.db
 *.log
 
 .metadata
+
+ios/Podfile
+pubspec.lock
+ios/Flutter/Debug.xcconfig
+ios/Flutter/Release.xcconfig
