@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide OutlinedButton;
 
-import '../components/OutlineButton.dart';
+import '../components/OutlinedButton.dart';
 import '../components/PrimaryButton.dart';
 
 class OrderCompletedScreen extends StatelessWidget {
@@ -44,7 +44,7 @@ class OrderCompletedScreen extends StatelessWidget {
             const SizedBox(height: 56),
             PrimaryButton(text: "Track Order", onClick: () {}),
             const SizedBox(height: 48),
-            OutlineButton(text: "Continue shopping", onClick: () {}),
+            OutlinedButton(text: "Continue shopping", onClick: () {}),
             const SizedBox(height: 32),
           ],
         ),

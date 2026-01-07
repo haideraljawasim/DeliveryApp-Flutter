@@ -1,12 +1,12 @@
-import 'package:flutter/cupertino.dart';
 
+import 'package:flutter/material.dart';
 import 'BasicButton.dart';
 
-class OutlineButton extends StatelessWidget {
+class OutlinedButton extends StatelessWidget {
   final String text;
   final VoidCallback onClick;
 
-  const OutlineButton({super.key, required this.onClick, required this.text});
+  const OutlinedButton({super.key, required this.onClick, required this.text});
 
   @override
   Widget build(BuildContext context) {
