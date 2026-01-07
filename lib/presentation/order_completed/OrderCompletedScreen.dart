@@ -44,7 +44,7 @@ class OrderCompletedScreen extends StatelessWidget {
             const SizedBox(height: 56),
             PrimaryButton(text: "Track Order", onClick: () {}),
             const SizedBox(height: 48),
-            OutlineButton(text: "Back to Home", onClick: () {}),
+            OutlineButton(text: "Continue shopping", onClick: () {}),
             const SizedBox(height: 32),
           ],
         ),
