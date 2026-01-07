@@ -53,6 +53,18 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  fonts:
+    - family: Brandon Grotesque
+      fonts:
+        - asset: assets/fonts/brandon_grotesque_thin.otf
+        - asset: assets/fonts/brandon_grotesque_light.otf
+        - asset: assets/fonts/brandon_grotesque_regular.otf
+        - asset: assets/fonts/brandon_grotesque_medium.otf
+        - asset: assets/fonts/brandon_grotesque_bold.otf
+        - asset: assets/fonts/brandon_grotesque_black.otf
+
+  assets:
+    - assets/images/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
