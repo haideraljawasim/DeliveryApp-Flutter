@@ -30,13 +30,25 @@ class HomeScreenContent extends StatelessWidget {
                   end: 90,
                   bottom: 24,
                 ),
-                child: Text(
-                  "Hello Tony, What fruit salad combo do you want today?",
-                  style: TextStyle(
-                    color: Color(0xFF27214D),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
+                child: Row(
+                  children: [
+                    Text(
+                      "Hello ${state.userName}, ",
+                      style: TextStyle(
+                        color: Color(0xFF27214D),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    Text(
+                      "What fruit salad combo do you want today?",
+                      style: TextStyle(
+                        color: Color(0xFF27214D),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
               ),
 
