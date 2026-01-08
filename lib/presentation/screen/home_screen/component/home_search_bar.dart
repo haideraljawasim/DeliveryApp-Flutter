@@ -12,6 +12,9 @@ class HomeSearchBar extends StatelessWidget {
         children: [
           Expanded(
             child: SearchBar(
+              padding: WidgetStatePropertyAll(
+                EdgeInsetsGeometry.directional(start: 24, top: 12, bottom: 12),
+              ),
               hintText: 'Search for fruit salad combos',
               hintStyle: WidgetStatePropertyAll(
                 TextStyle(color: Color(0xFF86869E), fontSize: 14),
