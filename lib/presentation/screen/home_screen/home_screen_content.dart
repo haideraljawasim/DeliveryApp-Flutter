@@ -17,76 +17,97 @@ class HomeScreenContent extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFFFFFFF),
       body: BlocBuilder<HomeScreenCubit, HomeScreenState>(
-        builder: (context, state) => SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HomeTopBar(),
-
-              Padding(
-                padding: EdgeInsetsGeometry.directional(
-                  start: 24,
-                  end: 90,
-                  bottom: 24,
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      "Hello ${state.userName}, ",
-                      style: TextStyle(
-                        color: Color(0xFF27214D),
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    Text(
-                      "What fruit salad combo do you want today?",
-                      style: TextStyle(
-                        color: Color(0xFF27214D),
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
+        builder: (context, state) {
+          if (state.isLoading) {
+            return Center(
+              child: CircularProgressIndicator(color: Color(0xFFFFA451)),
+            );
+          }
+          if (state.errorMsg != null) {
+            return Center(
+              child: Text(
+                'Error: ${state.errorMsg}',
+                style: const TextStyle(color: Colors.red, fontSize: 16),
               ),
+            );
+          }
 
-              HomeSearchBar(),
+          return SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HomeTopBar(),
 
-              Padding(
-                padding: EdgeInsetsGeometry.directional(
-                  start: 24,
-                  end: 90,
-                  bottom: 24,
-                ),
-                child: Text(
-                  "Recommended Combo",
-                  style: TextStyle(
-                    color: Color(0xFF27214D),
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
+                Padding(
+                  padding: EdgeInsetsGeometry.directional(
+                    start: 24,
+                    end: 90,
+                    bottom: 24,
+                  ),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Hello ${state.userName}, ",
+                        style: TextStyle(
+                          color: Color(0xFF27214D),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        "What fruit salad combo do you want today?",
+                        style: TextStyle(
+                          color: Color(0xFF27214D),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
 
-              ComboMealsList(meals: state.comboMeals, onMealClicked: (i) => {}),
+                HomeSearchBar(),
 
-              CategoriesTabs(
-                categories: state.categories,
-                onCategorySelected: context.read<HomeScreenCubit>().loadCategorizedMeals,
-                selectedCategoryId: state.selectedCategory,
-              ),
+                Padding(
+                  padding: EdgeInsetsGeometry.directional(
+                    start: 24,
+                    end: 90,
+                    bottom: 24,
+                  ),
+                  child: Text(
+                    "Recommended Combo",
+                    style: TextStyle(
+                      color: Color(0xFF27214D),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
 
-              CategorizedMealsList(
-                meals: state.categorizedMeals,
-                onMealClicked: (i) => {},
-              ),
+                ComboMealsList(
+                  meals: state.comboMeals,
+                  onMealClicked: (i) => {},
+                ),
 
-              SizedBox(height: 16),
-            ],
-          ),
-        ),
+                CategoriesTabs(
+                  categories: state.categories,
+                  onCategorySelected: context
+                      .read<HomeScreenCubit>()
+                      .loadCategorizedMeals,
+                  selectedCategoryId: state.selectedCategory,
+                ),
+
+                CategorizedMealsList(
+                  meals: state.categorizedMeals,
+                  onMealClicked: (i) => {},
+                ),
+
+                SizedBox(height: 16),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

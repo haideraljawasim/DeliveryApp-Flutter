@@ -26,12 +26,11 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
         ),
       );
     } catch (e) {
-      emit(state.copyWith(isLoading: false, errorMsg: 'Failed to load data'));
+      emit(state.copyWith(isLoading: false, errorMsg: 'failed to load data'));
     }
   }
 
   loadCategorizedMeals(int categoryId) async {
-    emit(state.copyWith(selectedCategory: categoryId, isLoading: true));
 
     try {
       final meals = await mealRepository.getMealsByCategory(categoryId);
