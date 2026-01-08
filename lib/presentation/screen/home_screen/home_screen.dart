@@ -1,8 +1,11 @@
+import 'package:deliveryapp_flutter/domain/entity/Category.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/home_search_bar.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/home_top_bar.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget{
+import 'component/categories_tabs.dart';
+
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
@@ -15,7 +18,11 @@ class HomeScreen extends StatelessWidget{
           HomeTopBar(),
 
           Padding(
-              padding: EdgeInsetsGeometry.directional(start: 24, end: 90, bottom: 24),
+            padding: EdgeInsetsGeometry.directional(
+              start: 24,
+              end: 90,
+              bottom: 24,
+            ),
             child: Text(
               "Hello Tony, What fruit salad combo do you want today?",
               style: TextStyle(
@@ -26,11 +33,15 @@ class HomeScreen extends StatelessWidget{
             ),
           ),
 
-          HomeSearchBar()
+          HomeSearchBar(),
 
+          CategoriesTabs(
+            categories: [Category(id: 1, name: "c1"), Category(id: 2, name: "c2"), Category(id: 3, name: "c3")],
+            onCategorySelected: (i) => {},
+            selectedCategoryId: 1,
+          )
         ],
       ),
     );
   }
-
 }
