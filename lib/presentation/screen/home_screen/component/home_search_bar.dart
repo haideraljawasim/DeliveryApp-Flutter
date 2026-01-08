@@ -7,7 +7,7 @@ class HomeSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsGeometry.symmetric(horizontal: 24),
+      padding: EdgeInsetsGeometry.directional(start: 24, end: 24, bottom: 40),
       child: Row(
         children: [
           Expanded(
