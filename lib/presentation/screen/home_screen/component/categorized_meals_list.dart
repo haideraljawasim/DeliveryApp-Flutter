@@ -15,7 +15,7 @@ class CategorizedMealsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 162,
+      height: 170,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: meals.length,
