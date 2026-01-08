@@ -1,5 +1,5 @@
 import 'package:deliveryapp_flutter/domain/entity/Category.dart';
-import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/category_tab.dart';
+import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/CategoryTab.dart';
 import 'package:flutter/cupertino.dart';
 
 class CategoriesTabs extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:deliveryapp_flutter/domain/entity/Meal.dart';
-import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/combo_meal_card.dart';
+import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/ComboMealCard.dart';
 import 'package:flutter/cupertino.dart';
 
 class ComboMealsList extends StatelessWidget {

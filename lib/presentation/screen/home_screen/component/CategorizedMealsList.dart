@@ -1,5 +1,5 @@
 import 'package:deliveryapp_flutter/domain/entity/Meal.dart';
-import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/categorized_meal_card.dart';
+import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/CategorizedMealCard.dart';
 import 'package:flutter/cupertino.dart';
 
 class CategorizedMealsList extends StatelessWidget {

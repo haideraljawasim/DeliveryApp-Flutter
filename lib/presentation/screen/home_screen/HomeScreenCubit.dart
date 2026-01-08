@@ -1,5 +1,5 @@
 import 'package:deliveryapp_flutter/domain/repository/MealRepository.dart';
-import 'package:deliveryapp_flutter/presentation/screen/home_screen/home_screen_state.dart';
+import 'package:deliveryapp_flutter/presentation/screen/home_screen/HomeScreenState.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreenCubit extends Cubit<HomeScreenState> {
@@ -31,7 +31,9 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
   }
 
   loadCategorizedMeals(int categoryId) async {
+    if(state.selectedCategory == categoryId) return;
 
+    emit(state.copyWith(selectedCategory: categoryId));
     try {
       final meals = await mealRepository.getMealsByCategory(categoryId);
 

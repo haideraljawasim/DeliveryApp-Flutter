@@ -9,6 +9,7 @@ class HomeSearchBar extends StatelessWidget {
     return Padding(
       padding: EdgeInsetsGeometry.directional(start: 24, end: 24, bottom: 40),
       child: Row(
+        mainAxisSize: MainAxisSize.max,
         children: [
           Expanded(
             child: SearchBar(
