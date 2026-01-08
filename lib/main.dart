@@ -1,4 +1,4 @@
-import 'package:deliveryapp_flutter/presenation/screen/home_screen/component/home_top_bar.dart';
+import 'package:deliveryapp_flutter/presentation/order_completed/OrderCompletedScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'di/AppModule.dart';
@@ -14,11 +14,11 @@ class DeliveryApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(useMaterial3: false, fontFamily: 'IBM Plex Sans Arabic'),
+      theme: ThemeData(useMaterial3: false, fontFamily: 'Brandon Grotesque'),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xFFEEF4F6),
-        body: SafeArea(child: HomeTopBar()),
+        backgroundColor: Color(0xFFFFFFFF),
+        body: SafeArea(child: Text("Hello World")),
       ),
     );
   }
