@@ -1,3 +1,4 @@
+import 'package:deliveryapp_flutter/presenation/screen/home_screen/component/home_top_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'di/AppModule.dart';
@@ -17,7 +18,7 @@ class DeliveryApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color(0xFFEEF4F6),
-        body: SafeArea(child: Text("Hello World")),
+        body: SafeArea(child: HomeTopBar()),
       ),
     );
   }

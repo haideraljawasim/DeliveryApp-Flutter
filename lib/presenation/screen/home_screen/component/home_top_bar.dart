@@ -6,7 +6,9 @@ class HomeTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Padding(
+      padding: EdgeInsetsGeometry.directional(start: 24, end: 24, top: 26, bottom: 11),
+    child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -35,6 +37,6 @@ class HomeTopBar extends StatelessWidget {
           ],
         ),
       ],
-    );
+    ),);
   }
 }
