@@ -1,5 +1,7 @@
-import 'package:deliveryapp_flutter/presentation/authentication_screen/AuthenticationScreen.dart';
+import 'package:deliveryapp_flutter/presentation/authentication_screen/AuthenticationContent.dart';
 import 'package:flutter/material.dart';
+
+import '../authentication_screen/AuthenticationScreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
