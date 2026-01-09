@@ -1,4 +1,4 @@
-import 'package:deliveryapp_flutter/presentation/splash_screen/SplashScreen.dart';
+import 'package:deliveryapp_flutter/presentation/order_completed/OrderCompletedScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'di/AppModule.dart';
