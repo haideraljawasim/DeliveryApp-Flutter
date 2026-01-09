@@ -8,14 +8,14 @@ final di = GetIt.instance;
 
 Future<void> setupDI() async {
   await Supabase.initialize(
-      url: 'https://tuewedzbnrdivwtgfclq.supabase.co',
-      anonKey: 'sb_publishable_KiV48wHO2SKIz_VsxLayow_uyZCZnTU'
+    url: '', // PLACE URL HERE
+    anonKey: '', // PLACE ANON KEY HERE
   );
 
   di.registerSingleton<SupabaseClient>(Supabase.instance.client);
 
   di.registerLazySingleton<MealRepositoryImpl>(
-        () => MealRepositoryImpl(di<SupabaseClient>()),
+    () => MealRepositoryImpl(di<SupabaseClient>()),
   );
 
   di.registerFactory(
