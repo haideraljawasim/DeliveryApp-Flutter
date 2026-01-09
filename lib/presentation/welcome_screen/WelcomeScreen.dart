@@ -44,7 +44,7 @@ class WelcomeScreen extends StatelessWidget {
                                     'assets/images/fruits_basket_still.png',
                                   ),
                                   width: double.infinity,
-                                  height: 260,
+                                  height: screenHeight * 0.317,
                                 ),
                                 SizedBox(height: 8),
                                 Image(
@@ -67,7 +67,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: ColoredBox(
                     color: Colors.white,
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(24,55,24,0),
+                      padding: EdgeInsets.fromLTRB(24,screenHeight * 0.068,24,0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -88,7 +88,7 @@ class WelcomeScreen extends StatelessWidget {
                             ),
                             textAlign: TextAlign.start,
                           ),
-                          SizedBox(height: 58),
+                          SizedBox(height: screenHeight * 0.071),
                           InkWell(
                             borderRadius: BorderRadius.circular(12),
                             onTap: () {
@@ -105,9 +105,9 @@ class WelcomeScreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 color: Color(0xFFFFA451),
                                 borderRadius: BorderRadius.circular(12),
-                              ),
+                              ), alignment: Alignment.center,
                               child: Padding(
-                                  padding: EdgeInsets.fromLTRB(118,14,0,14),
+                                  padding: EdgeInsets.fromLTRB(0,14,0,14),
                                 child: Text(
                                   'Let’s Continue',
                                   style: TextStyle(

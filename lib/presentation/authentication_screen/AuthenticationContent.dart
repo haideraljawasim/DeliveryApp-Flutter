@@ -59,7 +59,7 @@ class _AuthenticationScreenContentState
                                 Image.asset(
                                   'assets/images/fruit_basket.png',
                                   width: double.infinity,
-                                  height: 260,
+                                  height: screenHeight * 0.317,
                                 ),
                                 const SizedBox(height: 8),
                                 Image.asset(
@@ -81,8 +81,7 @@ class _AuthenticationScreenContentState
                   child: ColoredBox(
                     color: Colors.white,
                     child: Padding(
-                      padding:
-                      const EdgeInsets.fromLTRB(24, 55, 24, 0),
+                      padding: EdgeInsets.fromLTRB(24, screenHeight * 0.068, 24, 0),
                       child: Column(
                         crossAxisAlignment:
                         CrossAxisAlignment.start,
@@ -94,7 +93,7 @@ class _AuthenticationScreenContentState
                               fontSize: 20,
                             ),
                           ),
-                          const SizedBox(height: 16),
+                          SizedBox(height: 16),
 
                           TextField(
                             controller: _nameController,
@@ -110,7 +109,7 @@ class _AuthenticationScreenContentState
                             ),
                           ),
 
-                          const SizedBox(height: 19),
+                          SizedBox(height: screenHeight * 0.051),
 
                           InkWell(
                             borderRadius:
