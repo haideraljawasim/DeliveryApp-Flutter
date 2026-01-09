@@ -1,3 +1,4 @@
+import 'package:deliveryapp_flutter/presentation/authentication_screen/AuthenticationScreen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -89,6 +90,11 @@ class WelcomeScreen extends StatelessWidget {
                           InkWell(
                             borderRadius: BorderRadius.circular(12),
                             onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => const AuthenticationScreen(),
+                                ),
+                              );
 
                             },
                             child: Container(
