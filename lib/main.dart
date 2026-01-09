@@ -18,7 +18,7 @@ class DeliveryApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color(0xFFFFFFFF),
-        body: SafeArea(child: Text("Hello World")),
+        body: SafeArea(child: OrderCompletedScreen()),
       ),
     );
   }

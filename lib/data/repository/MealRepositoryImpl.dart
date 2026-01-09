@@ -13,13 +13,13 @@ class MealRepositoryImpl extends MealRepository {
   @override
   Future<List<Category>> getCategories() async {
     final data = await _client.from(CATEGORIES_TABLE).select();
-    return (data).map((e) => e.toCategory()).toList();
+    return (data).map((it) => it.toCategory()).toList();
   }
 
   @override
   Future<List<Meal>> getMeals() async {
     final data = await _client.from(MEALS_TABLE).select();
-    return (data).map((e) => e.toMeal()).toList();
+    return (data).map((it) => it.toMeal()).toList();
   }
 
   @override
@@ -29,7 +29,7 @@ class MealRepositoryImpl extends MealRepository {
         .select()
         .eq('category_id', categoryId);
 
-    return data.map((e) => e.toMeal()).toList();
+    return data.map((it) => it.toMeal()).toList();
   }
 
   @override
@@ -39,6 +39,6 @@ class MealRepositoryImpl extends MealRepository {
         .select()
         .or('title.ilike.%$query%,description.ilike.%$query%');
 
-    return data.map((e) => e.toMeal()).toList();
+    return data.map((it) => it.toMeal()).toList();
   }
 }
