@@ -1,8 +1,9 @@
+import 'package:deliveryapp_flutter/presentation/components/OutlinedButton.dart';
 import 'package:flutter/material.dart' hide OutlinedButton;
 import 'package:go_router/go_router.dart';
 
-import '../components/OutlinedButton.dart';
-import '../components/PrimaryButton.dart';
+import '../../components/PrimaryButton.dart';
+import '../../navigation/GoRouter.dart';
 
 class OrderCompletedScreen extends StatelessWidget {
   const OrderCompletedScreen({super.key});
@@ -52,13 +53,16 @@ class OrderCompletedScreen extends StatelessWidget {
                 PrimaryButton(
                   text: "Track Order",
                   onClick: () {
-                    context.go('/order_completed/delivery_status');
+                    context.push(AppRouts.deliveryStatus);
                   },
                 ),
                 const SizedBox(height: 48),
-                OutlinedButton(text: "Continue shopping", onClick: () {
-                  context.go('/');
-                }),
+                OutlinedButton(
+                  text: "Continue shopping",
+                  onClick: () {
+                    context.go(AppRouts.home);
+                  },
+                ),
                 const SizedBox(height: 32),
               ],
             ),

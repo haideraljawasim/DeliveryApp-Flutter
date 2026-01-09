@@ -31,7 +31,7 @@ class BasicButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
           child: Text(
             text,
-            style: TextStyle(
+            style: Theme.of(context).textTheme.displayMedium!.copyWith(
               fontSize: 16,
               fontWeight: FontWeight.w500,
               color: textColor ?? Color(0xFFFFFFFF),
