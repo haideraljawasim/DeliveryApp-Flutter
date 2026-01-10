@@ -1,6 +1,7 @@
 import 'package:deliveryapp_flutter/domain/entity/Meal.dart';
 import 'package:deliveryapp_flutter/presentation/components/BackButton.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:go_router/go_router.dart';
 
 class MealCard extends StatelessWidget {
   final Meal meal;
@@ -19,7 +20,14 @@ class MealCard extends StatelessWidget {
             padding: EdgeInsetsGeometry.directional(top: 20, start: 24),
             child: Row(
               children: [
-                SizedBox(width: 90, child: BackButton(onClick: () => {}),),
+                SizedBox(
+                  width: 90,
+                  child: BackButton(
+                    onClick: () {
+                      context.pop();
+                    },
+                  ),
+                ),
                 Spacer(),
               ],
             ),

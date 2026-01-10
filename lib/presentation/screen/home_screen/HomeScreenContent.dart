@@ -1,3 +1,4 @@
+import 'package:deliveryapp_flutter/presentation/navigation/GoRouter.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/CategorizedMealsList.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/HomeSearchBar.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/HomeTopBar.dart';
@@ -5,6 +6,7 @@ import 'package:deliveryapp_flutter/presentation/screen/home_screen/HomeScreenCu
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/HomeScreenState.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import 'component/CategoriesTabs.dart';
 import 'component/ComboMealsList.dart';
@@ -89,7 +91,10 @@ class HomeScreenContent extends StatelessWidget {
 
                 ComboMealsList(
                   meals: state.comboMeals,
-                  onMealClicked: (i) => {},
+                  onMealClicked: (i) {
+                    context.read<HomeScreenCubit>().saveComboMealDetails(i);
+                    context.go(AppRouts.mealDetails);
+                  },
                 ),
 
                 CategoriesTabs(
@@ -102,7 +107,10 @@ class HomeScreenContent extends StatelessWidget {
 
                 CategorizedMealsList(
                   meals: state.categorizedMeals,
-                  onMealClicked: (i) => {},
+                  onMealClicked: (i) {
+                    context.read<HomeScreenCubit>().saveCategorizedMealDetails(i);
+                    context.go(AppRouts.mealDetails);
+                  },
                 ),
 
                 SizedBox(height: 16),

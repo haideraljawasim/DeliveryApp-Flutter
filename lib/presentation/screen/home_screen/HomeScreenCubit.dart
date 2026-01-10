@@ -31,7 +31,7 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
   }
 
   loadCategorizedMeals(int categoryId) async {
-    if(state.selectedCategory == categoryId) return;
+    if (state.selectedCategory == categoryId) return;
 
     emit(state.copyWith(selectedCategory: categoryId));
     try {
@@ -41,5 +41,21 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
     } catch (e) {
       emit(state.copyWith(isLoading: false, errorMsg: 'Failed to load data'));
     }
+  }
+
+  saveComboMealDetails(int mealId) {
+    try {
+      mealRepository.saveMealDetails(
+        state.comboMeals.firstWhere((meal) => meal.id == mealId),
+      );
+    } catch (e) {}
+  }
+
+  saveCategorizedMealDetails(int mealId) {
+    try {
+      mealRepository.saveMealDetails(
+        state.categorizedMeals.firstWhere((meal) => meal.id == mealId),
+      );
+    } catch (e) {}
   }
 }
