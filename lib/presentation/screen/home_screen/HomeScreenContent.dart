@@ -93,7 +93,7 @@ class HomeScreenContent extends StatelessWidget {
                   meals: state.comboMeals,
                   onMealClicked: (i) {
                     context.read<HomeScreenCubit>().saveComboMealDetails(i);
-                    context.go(AppRouts.mealDetails);
+                    context.push(AppRouts.mealDetails);
                   },
                 ),
 
@@ -109,7 +109,7 @@ class HomeScreenContent extends StatelessWidget {
                   meals: state.categorizedMeals,
                   onMealClicked: (i) {
                     context.read<HomeScreenCubit>().saveCategorizedMealDetails(i);
-                    context.go(AppRouts.mealDetails);
+                    context.push(AppRouts.mealDetails);
                   },
                 ),
 
