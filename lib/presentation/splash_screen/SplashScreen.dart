@@ -1,10 +1,14 @@
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../data/UserLocalDataSource.dart';
 import '../navigation/GoRouter.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  final UserLocalDataSource userLocalDataSource;
+
+  const SplashScreen(this.userLocalDataSource, {super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -14,8 +18,15 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+
     Future.delayed(const Duration(seconds: 2), () {
-      context.go(AppRouts.welcome);
+      final hasUser = widget.userLocalDataSource.hasUser();
+
+      if (hasUser) {
+        context.go(AppRouts.home);
+      } else {
+        context.go(AppRouts.welcome);
+      }
     });
   }
 

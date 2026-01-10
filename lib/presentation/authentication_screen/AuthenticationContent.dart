@@ -100,7 +100,7 @@ class _AuthenticationScreenContentState
                           TextField(
                             controller: _nameController,
                             decoration: InputDecoration(
-                              hintText: "aziz",
+                              hintText: "hint",
                               filled: true,
                               fillColor: Colors.grey.shade200,
                               border: OutlineInputBorder(
