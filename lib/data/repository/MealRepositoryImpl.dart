@@ -6,6 +6,7 @@ import 'package:deliveryapp_flutter/domain/repository/MealRepository.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class MealRepositoryImpl extends MealRepository {
+  late final Meal meal;
   final SupabaseClient _client;
 
   MealRepositoryImpl(this._client);
@@ -40,5 +41,15 @@ class MealRepositoryImpl extends MealRepository {
         .or('title.ilike.%$query%,description.ilike.%$query%');
 
     return data.map((it) => it.toMeal()).toList();
+  }
+
+  @override
+  Meal getMealDetails() {
+    return meal;
+  }
+
+  @override
+  void saveMealDetails(Meal meal) {
+    this.meal = meal;
   }
 }
