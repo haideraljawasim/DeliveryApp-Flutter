@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../data/repository/MealRepositoryImpl.dart';
+import '../presentation/screen/basket/MyBasketCubit.dart';
 import '../presentation/screen/home_screen/HomeScreenCubit.dart';
 
 final di = GetIt.instance;
@@ -18,7 +19,6 @@ Future<void> setupDI() async {
     () => MealRepositoryImpl(di<SupabaseClient>()),
   );
 
-  di.registerFactory(
-        () => HomeScreenCubit(di<MealRepositoryImpl>()),
-  );
+  di.registerFactory(() => HomeScreenCubit(di<MealRepositoryImpl>()));
+  di.registerFactory(() => MyBasketCubit());
 }

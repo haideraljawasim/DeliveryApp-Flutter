@@ -1,3 +1,4 @@
+import 'package:deliveryapp_flutter/presentation/screen/basket/MyBasketScreen.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -25,6 +26,12 @@ final GoRouter appRouter = GoRouter(
         return const DeliveryStatusScreen();
       },
     ),
+    GoRoute(
+      path: AppRouts.basket,
+      builder: (BuildContext context, GoRouterState state) {
+        return const MyBasketScreen();
+      },
+    ),
   ],
 );
 
@@ -32,4 +39,5 @@ class AppRouts {
   static const String home = '/';
   static const String orderCompleted = '/order_completed';
   static const String deliveryStatus = '/delivery_status';
+  static const String basket = '/basket';
 }

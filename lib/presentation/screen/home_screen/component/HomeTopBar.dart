@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../util/AppStrings.dart';
 
 class HomeTopBar extends StatelessWidget {
-  const HomeTopBar({super.key});
+  final VoidCallback onCartClick;
+  const HomeTopBar({super.key, required this.onCartClick});
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +28,13 @@ class HomeTopBar extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SvgPicture.asset(
-                width: 24,
-                height: 24,
-                Assets.icShoppingCard,
+              GestureDetector(
+                onTap: onCartClick,
+                child: SvgPicture.asset(
+                  width: 24,
+                  height: 24,
+                  Assets.icShoppingCard,
+                ),
               ),
               SizedBox(height: 3),
               Text(
