@@ -7,6 +7,7 @@ import '../data/repository/MealRepositoryImpl.dart';
 import '../data/repository/UserRepositoryImpl.dart';
 import '../domain/repository/UserRepository.dart';
 import '../presentation/authentication_screen/AuthenticationCubit.dart';
+import '../presentation/screen/basket/MyBasketCubit.dart';
 import '../presentation/screen/home_screen/HomeScreenCubit.dart';
 
 final di = GetIt.instance;
@@ -33,4 +34,5 @@ Future<void> setupDI() async {
   di.registerLazySingleton<UserRepository>(
           () => UserRepositoryImpl(di()));
 
+  di.registerFactory(() => MyBasketCubit());
 }

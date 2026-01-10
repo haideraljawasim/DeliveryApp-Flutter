@@ -31,13 +31,15 @@ class BasicButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-          child: Text(
-            text,
-            style: TextStyle(
-              fontFamily: AppStrings.fontFamily,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: textColor ?? Color(0xFFFFFFFF),
+          child: Center(
+            child: Text(
+              text,
+              style: TextStyle(
+                fontFamily: AppStrings.fontFamily,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                color: textColor ?? Color(0xFFFFFFFF),
+              ),
             ),
           ),
         ),
