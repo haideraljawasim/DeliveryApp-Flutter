@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
-import '../screen/home_screen/HomeScreen.dart';
+import '../navigation/GoRouter.dart';
 import 'AuthenticationCubit.dart';
-
 
 class AuthenticationScreenContent extends StatefulWidget {
   const AuthenticationScreenContent({super.key});
@@ -38,11 +38,9 @@ class _AuthenticationScreenContentState
                   child: ColoredBox(
                     color: const Color(0xFFFFA451),
                     child: Padding(
-                      padding:
-                      EdgeInsets.only(top: screenHeight * 0.106),
+                      padding: EdgeInsets.only(top: screenHeight * 0.106),
                       child: Padding(
-                        padding:
-                        const EdgeInsets.symmetric(horizontal: 24),
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
                         child: Stack(
                           children: [
                             Positioned(
@@ -81,10 +79,14 @@ class _AuthenticationScreenContentState
                   child: ColoredBox(
                     color: Colors.white,
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(24, screenHeight * 0.068, 24, 0),
+                      padding: EdgeInsets.fromLTRB(
+                        24,
+                        screenHeight * 0.068,
+                        24,
+                        0,
+                      ),
                       child: Column(
-                        crossAxisAlignment:
-                        CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
                             'What is your firstname?',
@@ -102,8 +104,7 @@ class _AuthenticationScreenContentState
                               filled: true,
                               fillColor: Colors.grey.shade200,
                               border: OutlineInputBorder(
-                                borderRadius:
-                                BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(12),
                                 borderSide: BorderSide.none,
                               ),
                             ),
@@ -112,30 +113,19 @@ class _AuthenticationScreenContentState
                           SizedBox(height: screenHeight * 0.051),
 
                           InkWell(
-                            borderRadius:
-                            BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12),
                             onTap: () async {
                               await context
                                   .read<AuthenticationCubit>()
-                                  .submitName(
-                                  _nameController.text);
-
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) =>
-                                  const HomeScreen(),
-                                ),
-                              );
+                                  .submitName(_nameController.text);
+                              context.go(AppRouts.home);
                             },
                             child: Container(
                               width: double.infinity,
                               height: 56,
                               decoration: BoxDecoration(
-                                color:
-                                const Color(0xFFFFA451),
-                                borderRadius:
-                                BorderRadius.circular(12),
+                                color: const Color(0xFFFFA451),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               alignment: Alignment.center,
                               child: const Text(

@@ -1,7 +1,8 @@
-import 'package:deliveryapp_flutter/presentation/authentication_screen/AuthenticationContent.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../authentication_screen/AuthenticationScreen.dart';
+import '../navigation/GoRouter.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -67,7 +68,12 @@ class WelcomeScreen extends StatelessWidget {
                   child: ColoredBox(
                     color: Colors.white,
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(24,screenHeight * 0.068,24,0),
+                      padding: EdgeInsets.fromLTRB(
+                        24,
+                        screenHeight * 0.068,
+                        24,
+                        0,
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -92,12 +98,7 @@ class WelcomeScreen extends StatelessWidget {
                           InkWell(
                             borderRadius: BorderRadius.circular(12),
                             onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => const AuthenticationScreen(),
-                                ),
-                              );
-
+                              context.go(AppRouts.authentication);
                             },
                             child: Container(
                               width: double.infinity,
@@ -105,18 +106,19 @@ class WelcomeScreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 color: Color(0xFFFFA451),
                                 borderRadius: BorderRadius.circular(12),
-                              ), alignment: Alignment.center,
+                              ),
+                              alignment: Alignment.center,
                               child: Padding(
-                                  padding: EdgeInsets.fromLTRB(0,14,0,14),
+                                padding: EdgeInsets.fromLTRB(0, 14, 0, 14),
                                 child: Text(
                                   'Let’s Continue',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16,
-                                    color: Colors.white
+                                    color: Colors.white,
                                   ),
                                 ),
-                              )
+                              ),
                             ),
                           ),
                         ],
