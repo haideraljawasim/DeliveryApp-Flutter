@@ -6,7 +6,7 @@ import 'package:deliveryapp_flutter/domain/repository/MealRepository.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class MealRepositoryImpl extends MealRepository {
-  late final Meal meal;
+  Meal? meal;
   final SupabaseClient _client;
 
   MealRepositoryImpl(this._client);
@@ -44,7 +44,7 @@ class MealRepositoryImpl extends MealRepository {
   }
 
   @override
-  Meal getMealDetails() {
+  Meal? getMealDetails() {
     return meal;
   }
 

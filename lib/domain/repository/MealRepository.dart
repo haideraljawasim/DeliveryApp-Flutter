@@ -10,7 +10,7 @@ abstract class MealRepository {
 
   Future<List<Meal>> searchMeals(String query);
 
-  Meal getMealDetails();
+  Meal? getMealDetails();
 
   void saveMealDetails(Meal meal);
 }
