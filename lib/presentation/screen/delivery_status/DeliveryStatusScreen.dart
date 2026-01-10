@@ -1,3 +1,4 @@
+import 'package:deliveryapp_flutter/presentation/util/AppStrings.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -31,7 +32,7 @@ class DeliveryStatusScreen extends StatelessWidget {
                 StatusRow(
                   text: "Order Taken",
                   color: const Color(0xFFFFFAEB),
-                  image: const AssetImage('assets/images/paper.png'),
+                  image: const AssetImage(Assets.paperImage),
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 32, vertical: 4),
@@ -40,7 +41,7 @@ class DeliveryStatusScreen extends StatelessWidget {
                 StatusRow(
                   text: "Order Is Being Prepared",
                   color: const Color(0xFFF1EFF6),
-                  image: const AssetImage('assets/images/board.png'),
+                  image: const AssetImage(Assets.boardImage),
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 32, vertical: 4),
@@ -50,7 +51,7 @@ class DeliveryStatusScreen extends StatelessWidget {
                   text: "Order Is Being Delivered",
                   color: const Color(0xFFFEF0F0),
                   subTitle: "Your delivery agent is coming",
-                  image: const AssetImage('assets/images/bike.png'),
+                  image: const AssetImage(Assets.bikeImage),
                   trailingIcon: PhoneIconContainer(),
                 ),
                 const Padding(
@@ -62,7 +63,7 @@ class DeliveryStatusScreen extends StatelessWidget {
                   child: Image(
                     width: double.infinity,
                     height: 128,
-                    image: const AssetImage('assets/images/map_image.png'),
+                    image: const AssetImage(Assets.mapImage),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -73,7 +74,7 @@ class DeliveryStatusScreen extends StatelessWidget {
                 StatusRow(
                   text: "Order Received",
                   color: const Color(0xFFF0FEF8),
-                  image: const AssetImage('assets/images/check_mark.png'),
+                  image: const AssetImage(Assets.checkMarkImage),
                   trailingIcon: LoadingAnimationWidget.waveDots(
                     color: Color(0xFFFFE3C9),
                     size: 32,

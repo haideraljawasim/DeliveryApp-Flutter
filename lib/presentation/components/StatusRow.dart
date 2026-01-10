@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../util/AppStrings.dart';
+
 class StatusRow extends StatelessWidget {
   final String text;
   final Color color;
@@ -39,7 +41,8 @@ class StatusRow extends StatelessWidget {
           children: [
             Text(
               text,
-              style: Theme.of(context).textTheme.displayMedium!.copyWith(
+              style: TextStyle(
+                fontFamily: AppStrings.fontFamily,
                 color: Color(0xFF000000),
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
@@ -49,7 +52,8 @@ class StatusRow extends StatelessWidget {
               const SizedBox(height: 4),
               Text(
                 subTitle!,
-                style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                style: TextStyle(
+                  fontFamily: AppStrings.fontFamily,
                   color: Color(0xFF000000),
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
@@ -61,7 +65,7 @@ class StatusRow extends StatelessWidget {
         Spacer(),
         trailingIcon ??
             SvgPicture.asset(
-              'assets/icons/ic_check.svg',
+              Assets.icCheck,
               width: 24,
               height: 24,
             ),
@@ -84,7 +88,7 @@ class PhoneIconContainer extends StatelessWidget {
       ),
       child: Center(
         child: SvgPicture.asset(
-          'assets/icons/ic_phone.svg',
+          Assets.icPhone,
           width: 24,
           height: 24,
         ),

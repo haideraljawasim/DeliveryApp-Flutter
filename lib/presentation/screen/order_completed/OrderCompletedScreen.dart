@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../components/PrimaryButton.dart';
 import '../../navigation/GoRouter.dart';
+import '../../util/AppStrings.dart';
 
 class OrderCompletedScreen extends StatelessWidget {
   const OrderCompletedScreen({super.key});
@@ -26,14 +27,15 @@ class OrderCompletedScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 116),
                 const Image(
-                  image: AssetImage('assets/images/check_mark.png'),
+                  image: AssetImage(Assets.checkMarkImage),
                   height: 164,
                   width: 164,
                 ),
                 const SizedBox(height: 56),
                 Text(
                   "Congratulations!!!",
-                  style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                  style: TextStyle(
+                    fontFamily: AppStrings.fontFamily,
                     fontSize: 32,
                     fontWeight: FontWeight.w500,
                     color: Color(0xFF27214D),
@@ -43,7 +45,8 @@ class OrderCompletedScreen extends StatelessWidget {
                 Text(
                   "Your order have been taken and is being attended to",
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                  style: TextStyle(
+                    fontFamily: AppStrings.fontFamily,
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
                     color: const Color(0xFF27214D),

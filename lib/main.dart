@@ -1,4 +1,5 @@
 import 'package:deliveryapp_flutter/presentation/navigation/GoRouter.dart';
+import 'package:deliveryapp_flutter/presentation/util/AppStrings.dart';
 import 'package:flutter/material.dart';
 
 import 'di/AppModule.dart';
@@ -16,7 +17,7 @@ class DeliveryApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: false, fontFamily: 'Brandon Grotesque'),
+      theme: ThemeData(useMaterial3: false, fontFamily: AppStrings.fontFamily),
     );
   }
 }

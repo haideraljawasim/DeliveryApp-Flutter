@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../util/AppStrings.dart';
+
 class BasicButton extends StatelessWidget {
   final String text;
   final VoidCallback onClick;
@@ -31,7 +33,8 @@ class BasicButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
           child: Text(
             text,
-            style: Theme.of(context).textTheme.displayMedium!.copyWith(
+            style: TextStyle(
+              fontFamily: AppStrings.fontFamily,
               fontSize: 16,
               fontWeight: FontWeight.w500,
               color: textColor ?? Color(0xFFFFFFFF),

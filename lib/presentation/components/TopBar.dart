@@ -1,6 +1,8 @@
 import 'package:deliveryapp_flutter/presentation/components/BackButton.dart';
 import 'package:flutter/material.dart' hide BackButton;
 
+import '../util/AppStrings.dart';
+
 class TopBar extends StatelessWidget {
   final String title;
   final VoidCallback onBackClick;
@@ -18,7 +20,8 @@ class TopBar extends StatelessWidget {
           const SizedBox(width: 14),
           Text(
             title,
-            style: Theme.of(context).textTheme.displayMedium!.copyWith(
+            style: TextStyle(
+              fontFamily: AppStrings.fontFamily,
               fontSize: 24,
               fontWeight: FontWeight.w500,
               color: Color(0xFFFFFFFF),
