@@ -17,7 +17,12 @@ class MealCard extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsetsGeometry.directional(top: 20, start: 24),
-            child: SizedBox(width: 90, child: BackButton(onClick: () => {}),),
+            child: Row(
+              children: [
+                SizedBox(width: 90, child: BackButton(onClick: () => {}),),
+                Spacer(),
+              ],
+            ),
           ),
 
           Padding(
