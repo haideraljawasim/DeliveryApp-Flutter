@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../util/AppStrings.dart';
+
 class HomeTopBar extends StatelessWidget {
   const HomeTopBar({super.key});
 
@@ -20,7 +22,7 @@ class HomeTopBar extends StatelessWidget {
           SvgPicture.asset(
             width: 22,
             height: 11,
-            "assets/icons/ic_two_lines.svg",
+            Assets.icTwoLines,
           ),
           Column(
             mainAxisSize: MainAxisSize.min,
@@ -28,7 +30,7 @@ class HomeTopBar extends StatelessWidget {
               SvgPicture.asset(
                 width: 24,
                 height: 24,
-                "assets/icons/ic_shopping_card.svg",
+                Assets.icShoppingCard,
               ),
               SizedBox(height: 3),
               Text(

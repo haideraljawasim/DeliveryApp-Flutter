@@ -1,4 +1,5 @@
 import 'package:deliveryapp_flutter/domain/entity/Meal.dart';
+import 'package:deliveryapp_flutter/presentation/util/AppStrings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -31,7 +32,7 @@ class ComboMealCard extends StatelessWidget {
                 SvgPicture.asset(
                   width: 16,
                   height: 16,
-                  "assets/icons/ic_heart.svg",
+                  Assets.icHeart,
                 ),
               ],
             ),
@@ -58,7 +59,7 @@ class ComboMealCard extends StatelessWidget {
                     SvgPicture.asset(
                       width: 16,
                       height: 13,
-                      "assets/icons/ic_money.svg",
+                      Assets.icMoney,
                     ),
                     SizedBox(width: 4),
                     Text(
@@ -73,7 +74,7 @@ class ComboMealCard extends StatelessWidget {
                     SvgPicture.asset(
                       width: 24,
                       height: 24,
-                      "assets/icons/ic_add.svg",
+                      Assets.icAdd,
                     ),
                   ],
                 ),

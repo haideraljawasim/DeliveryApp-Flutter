@@ -1,8 +1,8 @@
-import 'package:deliveryapp_flutter/presentation/screen/home_screen/home_screen_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../data/repository/MealRepositoryImpl.dart';
+import '../presentation/screen/home_screen/HomeScreenCubit.dart';
 
 final di = GetIt.instance;
 

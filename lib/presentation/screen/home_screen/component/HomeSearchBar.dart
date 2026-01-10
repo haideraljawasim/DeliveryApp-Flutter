@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../util/AppStrings.dart';
+
 class HomeSearchBar extends StatelessWidget {
   const HomeSearchBar({super.key});
 
@@ -23,7 +25,7 @@ class HomeSearchBar extends StatelessWidget {
               leading: SvgPicture.asset(
                 width: 16,
                 height: 16,
-                "assets/icons/ic_search.svg",
+                Assets.icSearch,
               ),
               backgroundColor: WidgetStatePropertyAll(Color(0xFFF3F4F9)),
               elevation: WidgetStatePropertyAll(0.0),
@@ -40,7 +42,7 @@ class HomeSearchBar extends StatelessWidget {
           SvgPicture.asset(
             width: 26,
             height: 17,
-            "assets/icons/ic_filter_horizontal.svg",
+            Assets.icFilter,
           ),
         ],
       ),
