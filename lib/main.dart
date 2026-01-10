@@ -1,4 +1,4 @@
-import 'package:deliveryapp_flutter/presentation/splash_screen/SplashScreen.dart';
+import 'package:deliveryapp_flutter/presentation/order_completed/OrderCompletedScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -18,8 +18,8 @@ class DeliveryApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(useMaterial3: false, fontFamily: 'Brandon Grotesque'),
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
     );

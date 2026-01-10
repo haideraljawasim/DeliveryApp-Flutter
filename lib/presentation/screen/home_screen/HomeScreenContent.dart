@@ -16,8 +16,12 @@ class HomeScreenContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFFFFFF),
-      body: BlocBuilder<HomeScreenCubit, HomeScreenState>(
-        builder: (context, state) {
+      body: SafeArea(
+        left: false,
+        right: false,
+        bottom: false,
+        child: BlocBuilder<HomeScreenCubit, HomeScreenState>(
+          builder: (context, state) {
           if (state.isLoading) {
             return Center(
               child: CircularProgressIndicator(color: Color(0xFFFFA451)),
@@ -106,6 +110,7 @@ class HomeScreenContent extends StatelessWidget {
             ),
           );
         },
+      ),
       ),
     );
   }
