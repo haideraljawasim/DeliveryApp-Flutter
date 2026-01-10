@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 
 class MealDetailsCard extends StatelessWidget {
   final Meal meal;
+  final int count;
 
-  const MealDetailsCard({super.key, required this.meal});
+  const MealDetailsCard({super.key, required this.meal, required this.count});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class MealDetailsCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: 32),
-            MealPriceRow(count: 1, price: meal.price),
+            MealPriceRow(count: count, price: meal.price),
             SizedBox(height: 32),
             Divider(thickness: 1, color: Color(0xFFF3F3F3), height: 1),
             SizedBox(height: 32),
@@ -76,9 +77,9 @@ class MealDetailsCard extends StatelessWidget {
                 fontWeight: FontWeight.w400,
               ),
             ),
-            SizedBox(height: 39,),
+            SizedBox(height: 39),
             MealFavouriteRow(),
-            SizedBox(height: 16,)
+            SizedBox(height: 16),
           ],
         ),
       ),

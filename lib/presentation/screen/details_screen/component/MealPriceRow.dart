@@ -1,8 +1,10 @@
+import 'package:deliveryapp_flutter/presentation/screen/details_screen/DetailsScreenCubit.dart';
 import 'package:deliveryapp_flutter/presentation/util/AppStrings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MealPriceRow extends StatelessWidget{
+class MealPriceRow extends StatelessWidget {
   final int count;
   final double price;
 
@@ -13,7 +15,9 @@ class MealPriceRow extends StatelessWidget{
     return Row(
       children: [
         InkWell(
-          onTap: () => {},
+          onTap: () {
+            context.read<DetailsScreenCubit>().onMinusClicked();
+          },
           child: SvgPicture.asset(
             width: 32,
             height: 32,
@@ -21,7 +25,7 @@ class MealPriceRow extends StatelessWidget{
             color: Color(0xFF27214D),
           ),
         ),
-        SizedBox(width: 24,),
+        SizedBox(width: 24),
         Text(
           "$count",
           overflow: TextOverflow.ellipsis,
@@ -31,14 +35,12 @@ class MealPriceRow extends StatelessWidget{
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(width: 24,),
+        SizedBox(width: 24),
         InkWell(
-          onTap: () => {},
-          child: SvgPicture.asset(
-            width: 32,
-            height: 32,
-            Assets.icAdd,
-          ),
+          onTap: () {
+            context.read<DetailsScreenCubit>().onPlusClicked();
+          },
+          child: SvgPicture.asset(width: 32, height: 32, Assets.icAdd),
         ),
         Spacer(),
 
@@ -48,7 +50,7 @@ class MealPriceRow extends StatelessWidget{
           Assets.icMoney,
           color: Color(0xFF27214D),
         ),
-        SizedBox(width: 5,),
+        SizedBox(width: 5),
         Text(
           "$price",
           overflow: TextOverflow.ellipsis,
@@ -61,5 +63,4 @@ class MealPriceRow extends StatelessWidget{
       ],
     );
   }
-
 }
