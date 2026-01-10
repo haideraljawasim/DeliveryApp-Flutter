@@ -9,7 +9,7 @@ class MyBasketCubit extends Cubit<MyBasketState> {
 
   loadData() async {
     emit(state.copyWith(isLoading: true));
-    await Future.delayed(Duration(seconds: 3)); // TODO remove this delay
+    await Future.delayed(Duration(seconds: 1)); // TODO remove this delay
     final List<CartItem> cartItems = [
       CartItem(imageUrl: Assets.bikeImage, price: 100, name: 'Apple', count: 2),
       // TODO get from server
