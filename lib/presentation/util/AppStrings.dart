@@ -16,6 +16,7 @@ class Assets {
   static const String icHeart = "$_icons/ic_heart.svg";
   static const String icMoney = "$_icons/ic_money.svg";
   static const String icAdd = "$_icons/ic_add.svg";
+  static const String icMinus = "$_icons/ic_minus.svg";
   static const String bikeImage = "$_images/bike.png";
   static const String boardImage = "$_images/board.png";
   static const String checkMarkImage = "$_images/check_mark.png";
