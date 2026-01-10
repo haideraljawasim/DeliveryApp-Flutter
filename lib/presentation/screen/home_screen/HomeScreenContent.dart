@@ -5,7 +5,9 @@ import 'package:deliveryapp_flutter/presentation/screen/home_screen/HomeScreenCu
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/HomeScreenState.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../navigation/GoRouter.dart';
 import 'component/CategoriesTabs.dart';
 import 'component/ComboMealsList.dart';
 
@@ -41,7 +43,9 @@ class HomeScreenContent extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                HomeTopBar(),
+                HomeTopBar(
+                  onCartClick: () => context.push(AppRouts.basket),
+                ),
 
                 Padding(
                   padding: EdgeInsetsGeometry.directional(
