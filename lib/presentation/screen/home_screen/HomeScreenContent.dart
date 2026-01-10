@@ -1,4 +1,3 @@
-import 'package:deliveryapp_flutter/presentation/navigation/GoRouter.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/CategorizedMealsList.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/HomeSearchBar.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/HomeTopBar.dart';
@@ -8,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../navigation/GoRouter.dart';
 import 'component/CategoriesTabs.dart';
 import 'component/ComboMealsList.dart';
 
@@ -38,12 +38,14 @@ class HomeScreenContent extends StatelessWidget {
               );
             }
 
-            return SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  HomeTopBar(),
+          return SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HomeTopBar(
+                  onCartClick: () => context.push(AppRouts.basket),
+                ),
 
                   Padding(
                     padding: EdgeInsetsGeometry.directional(
