@@ -7,10 +7,10 @@ class DetailsScreenCubit extends Cubit<DetailsScreenState>{
 
   DetailsScreenCubit(this.mealRepository) : super(DetailsScreenState());
 
-  loadData() {
+  loadData(String mealId) async {
     emit(state.copyWith(isLoading: true));
     try{
-      final meal = mealRepository.getMealDetails();
+      final meal = await mealRepository.getMealById(int.parse(mealId));
 
       emit(state.copyWith(isLoading: false, meal: meal));
     }catch (e){

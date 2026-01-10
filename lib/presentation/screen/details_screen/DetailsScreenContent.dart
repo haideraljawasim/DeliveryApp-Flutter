@@ -18,7 +18,7 @@ class DetailsScreenContent extends StatelessWidget {
           builder: (context, state) {
             if (state.isLoading) {
               return Center(
-                child: CircularProgressIndicator(color: Color(0xFFFFA451)),
+                child: CircularProgressIndicator(color: Color(0xFFFFFFFF)),
               );
             }
             final meal = state.meal;

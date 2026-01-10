@@ -6,12 +6,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../di/AppModule.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key});
+  final String mealId;
+  const DetailsScreen({super.key, required this.mealId});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => di<DetailsScreenCubit>()..loadData(),
+      create: (_) => di<DetailsScreenCubit>()..loadData(mealId),
       child: DetailsScreenContent(),
     );
   }

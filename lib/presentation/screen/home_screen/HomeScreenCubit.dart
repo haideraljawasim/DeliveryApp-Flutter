@@ -42,20 +42,4 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
       emit(state.copyWith(isLoading: false, errorMsg: 'Failed to load data'));
     }
   }
-
-  saveComboMealDetails(int mealId) {
-    try {
-      mealRepository.saveMealDetails(
-        state.comboMeals.firstWhere((meal) => meal.id == mealId),
-      );
-    } catch (e) {}
-  }
-
-  saveCategorizedMealDetails(int mealId) {
-    try {
-      mealRepository.saveMealDetails(
-        state.categorizedMeals.firstWhere((meal) => meal.id == mealId),
-      );
-    } catch (e) {}
-  }
 }

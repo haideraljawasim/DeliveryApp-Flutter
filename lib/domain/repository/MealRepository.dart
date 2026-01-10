@@ -10,7 +10,5 @@ abstract class MealRepository {
 
   Future<List<Meal>> searchMeals(String query);
 
-  Meal? getMealDetails();
-
-  void saveMealDetails(Meal meal);
+  Future<Meal> getMealById(int id);
 }

@@ -27,9 +27,10 @@ final GoRouter appRouter = GoRouter(
       },
     ),
     GoRoute(
-      path: AppRouts.mealDetails,
+      path: '${AppRouts.mealDetails}/:${AppRouts.mealDetailsIdParam}',
       builder: (BuildContext context, GoRouterState state) {
-        return const DetailsScreen();
+        final mealId = state.pathParameters[AppRouts.mealDetailsIdParam]!;
+        return DetailsScreen(mealId: mealId);
       },
     ),
   ],
@@ -40,4 +41,5 @@ class AppRouts {
   static const String orderCompleted = '/order_completed';
   static const String deliveryStatus = '/delivery_status';
   static const String mealDetails = '/meal_details';
+  static const String mealDetailsIdParam = 'mealId';
 }
