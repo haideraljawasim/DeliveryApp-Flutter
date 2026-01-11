@@ -1,4 +1,5 @@
 import 'package:deliveryapp_flutter/presentation/screen/basket/MyBasketScreen.dart';
+import 'package:deliveryapp_flutter/presentation/screen/details_screen/DetailsScreen.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/HomeScreen.dart';
 import 'package:deliveryapp_flutter/presentation/splash_screen/SplashScreen.dart';
 import 'package:flutter/material.dart';
@@ -55,6 +56,13 @@ GoRouter appRouter(UserLocalDataSource userLocalDataSource) {
           return const MyBasketScreen();
         },
       ),
+      GoRoute(
+        path: '${AppRouts.mealDetails}/:${AppRouts.mealDetailsIdParam}',
+        builder: (BuildContext context, GoRouterState state) {
+          final mealId = state.pathParameters[AppRouts.mealDetailsIdParam]!;
+          return DetailsScreen(mealId: mealId);
+        },
+      ),
     ],
   );
 }
@@ -67,4 +75,6 @@ class AppRouts {
   static const String orderCompleted = '/order_completed';
   static const String deliveryStatus = '/delivery_status';
   static const String basket = '/basket';
+  static const String mealDetails = '/meal_details';
+  static const String mealDetailsIdParam = 'mealId';
 }

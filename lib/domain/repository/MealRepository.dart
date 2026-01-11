@@ -9,4 +9,6 @@ abstract class MealRepository {
   Future<List<Meal>> getMealsByCategory(int categoryId);
 
   Future<List<Meal>> searchMeals(String query);
+
+  Future<Meal> getMealById(int id);
 }

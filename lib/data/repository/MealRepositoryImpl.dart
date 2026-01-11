@@ -41,4 +41,13 @@ class MealRepositoryImpl extends MealRepository {
 
     return data.map((it) => it.toMeal()).toList();
   }
+
+  @override
+  Future<Meal> getMealById(int id) async {
+    final data = await _client
+        .from(MEALS_TABLE)
+        .select().eq('id', id)
+        .single();
+    return data.toMeal();
+  }
 }

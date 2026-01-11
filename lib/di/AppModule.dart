@@ -1,3 +1,4 @@
+import 'package:deliveryapp_flutter/presentation/screen/details_screen/DetailsScreenCubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -35,4 +36,8 @@ Future<void> setupDI() async {
           () => UserRepositoryImpl(di()));
 
   di.registerFactory(() => MyBasketCubit());
+
+  di.registerFactory(
+        () => DetailsScreenCubit(di<MealRepositoryImpl>()),
+  );
 }

@@ -31,7 +31,7 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
   }
 
   loadCategorizedMeals(int categoryId) async {
-    if(state.selectedCategory == categoryId) return;
+    if (state.selectedCategory == categoryId) return;
 
     emit(state.copyWith(selectedCategory: categoryId));
     try {
