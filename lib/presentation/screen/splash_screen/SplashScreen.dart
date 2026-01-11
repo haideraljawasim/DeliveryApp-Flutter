@@ -1,9 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../data/UserLocalDataSource.dart';
-import '../navigation/GoRouter.dart';
+import '../../../data/UserLocalDataSource.dart';
+import '../../navigation/GoRouter.dart';
 
 class SplashScreen extends StatefulWidget {
   final UserLocalDataSource userLocalDataSource;

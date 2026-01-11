@@ -6,7 +6,7 @@ import '../util/AppStrings.dart';
 class StatusRow extends StatelessWidget {
   final String text;
   final Color color;
-  final AssetImage image;
+  final ImageProvider image;
   final Widget? trailingIcon;
   final String? subTitle;
 

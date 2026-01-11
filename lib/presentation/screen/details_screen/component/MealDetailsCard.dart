@@ -1,7 +1,6 @@
 import 'package:deliveryapp_flutter/domain/entity/Meal.dart';
 import 'package:deliveryapp_flutter/presentation/screen/details_screen/component/MealFavouriteRow.dart';
 import 'package:deliveryapp_flutter/presentation/screen/details_screen/component/MealPriceRow.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MealDetailsCard extends StatelessWidget {

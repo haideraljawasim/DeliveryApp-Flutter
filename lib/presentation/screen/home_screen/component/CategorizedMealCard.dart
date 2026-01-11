@@ -37,7 +37,7 @@ class CategorizedMealCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           boxShadow: [BoxShadow(color: Color(0x1A000000), blurRadius: 28)],
-          color: backgroundColors[Random().nextInt(backgroundColors.length)],
+          color: backgroundColors[meal.id % backgroundColors.length],
         ),
         child: Stack(
           alignment: AlignmentGeometry.topCenter,

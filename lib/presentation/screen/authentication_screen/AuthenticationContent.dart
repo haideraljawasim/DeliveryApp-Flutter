@@ -1,11 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../authentication_screen/AuthenticationScreen.dart';
-import '../navigation/GoRouter.dart';
+import '../../navigation/GoRouter.dart';
+import 'AuthenticationCubit.dart';
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+class AuthenticationScreenContent extends StatefulWidget {
+  const AuthenticationScreenContent({super.key});
+
+  @override
+  State<AuthenticationScreenContent> createState() =>
+      _AuthenticationScreenContentState();
+}
+
+class _AuthenticationScreenContentState
+    extends State<AuthenticationScreenContent> {
+  final TextEditingController _nameController = TextEditingController();
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,38 +36,32 @@ class WelcomeScreen extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.57,
                   child: ColoredBox(
-                    color: Color(0xFFFFA451),
+                    color: const Color(0xFFFFA451),
                     child: Padding(
                       padding: EdgeInsets.only(top: screenHeight * 0.106),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24),
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
                         child: Stack(
                           children: [
                             Positioned(
                               top: -10,
                               right: 10,
-                              child: Image(
-                                image: AssetImage(
-                                  'assets/images/fruit_drop_image.png',
-                                ),
+                              child: Image.asset(
+                                'assets/images/fruit_drop_image.png',
                                 width: 50,
                                 height: 38,
                               ),
                             ),
                             Column(
                               children: [
-                                Image(
-                                  image: AssetImage(
-                                    'assets/images/fruits_basket_still.png',
-                                  ),
+                                Image.asset(
+                                  'assets/images/fruit_basket.png',
                                   width: double.infinity,
                                   height: screenHeight * 0.317,
                                 ),
-                                SizedBox(height: 8),
-                                Image(
-                                  image: AssetImage(
-                                    'assets/images/fruits_basket_still_shadow.png',
-                                  ),
+                                const SizedBox(height: 8),
+                                Image.asset(
+                                  'assets/images/fruits_basket_shadow.png',
                                   width: double.infinity,
                                 ),
                               ],
@@ -62,6 +72,7 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
                 SizedBox(
                   height: screenHeight * 0.43,
                   width: double.infinity,
@@ -77,46 +88,52 @@ class WelcomeScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Get The Freshest Fruit Salad Combo',
+                          const Text(
+                            'What is your firstname?',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 20,
                             ),
-                            textAlign: TextAlign.start,
                           ),
-                          SizedBox(height: 8),
-                          Text(
-                            'We deliver the best and freshest fruit salad in town. Order for a combo today!!!',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16,
+                          SizedBox(height: 16),
+
+                          TextField(
+                            controller: _nameController,
+                            decoration: InputDecoration(
+                              hintText: "hint",
+                              filled: true,
+                              fillColor: Colors.grey.shade200,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(12),
+                                borderSide: BorderSide.none,
+                              ),
                             ),
-                            textAlign: TextAlign.start,
                           ),
-                          SizedBox(height: screenHeight * 0.071),
+
+                          SizedBox(height: screenHeight * 0.051),
+
                           InkWell(
                             borderRadius: BorderRadius.circular(12),
-                            onTap: () {
-                              context.go(AppRouts.authentication);
+                            onTap: () async {
+                              await context
+                                  .read<AuthenticationCubit>()
+                                  .submitName(_nameController.text);
+                              context.go(AppRouts.home);
                             },
                             child: Container(
                               width: double.infinity,
                               height: 56,
                               decoration: BoxDecoration(
-                                color: Color(0xFFFFA451),
+                                color: const Color(0xFFFFA451),
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               alignment: Alignment.center,
-                              child: Padding(
-                                padding: EdgeInsets.fromLTRB(0, 14, 0, 14),
-                                child: Text(
-                                  'Let’s Continue',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16,
-                                    color: Colors.white,
-                                  ),
+                              child: const Text(
+                                'Start Ordering',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16,
+                                  color: Colors.white,
                                 ),
                               ),
                             ),

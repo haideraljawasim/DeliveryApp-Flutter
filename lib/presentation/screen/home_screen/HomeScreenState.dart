@@ -9,6 +9,7 @@ class HomeScreenState {
   final List<Meal> categorizedMeals;
   final int selectedCategory;
   final String userName;
+  final bool isLoadingByCategory;
 
   HomeScreenState({
     this.isLoading = false,
@@ -17,7 +18,8 @@ class HomeScreenState {
     this.categories = const [],
     this.categorizedMeals = const [],
     this.selectedCategory = 0,
-    this.userName = "Tony"
+    this.userName = "Tony",
+    this.isLoadingByCategory = false
   });
 
   HomeScreenState copyWith({
@@ -27,7 +29,8 @@ class HomeScreenState {
     List<Category>? categories,
     List<Meal>? categorizedMeals,
     int? selectedCategory,
-    String? userName
+    String? userName,
+    bool? isLoadingByCategory
 }){
     return HomeScreenState(
       isLoading: isLoading ?? this.isLoading,
@@ -36,7 +39,8 @@ class HomeScreenState {
       categories: categories ?? this.categories,
       categorizedMeals: categorizedMeals ?? this.categorizedMeals,
       selectedCategory: selectedCategory ?? this.selectedCategory,
-      userName: userName ?? this.userName
+      userName: userName ?? this.userName,
+      isLoadingByCategory: isLoadingByCategory ?? this.isLoadingByCategory
     );
   }
 }

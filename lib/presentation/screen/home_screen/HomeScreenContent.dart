@@ -1,8 +1,8 @@
+import 'package:deliveryapp_flutter/presentation/screen/home_screen/HomeScreenCubit.dart';
+import 'package:deliveryapp_flutter/presentation/screen/home_screen/HomeScreenState.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/CategorizedMealsList.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/HomeSearchBar.dart';
 import 'package:deliveryapp_flutter/presentation/screen/home_screen/component/HomeTopBar.dart';
-import 'package:deliveryapp_flutter/presentation/screen/home_screen/HomeScreenCubit.dart';
-import 'package:deliveryapp_flutter/presentation/screen/home_screen/HomeScreenState.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -38,14 +38,12 @@ class HomeScreenContent extends StatelessWidget {
               );
             }
 
-          return SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                HomeTopBar(
-                  onCartClick: () => context.push(AppRouts.basket),
-                ),
+            return SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  HomeTopBar(onCartClick: () => context.push(AppRouts.basket)),
 
                   Padding(
                     padding: EdgeInsetsGeometry.directional(
@@ -108,6 +106,7 @@ class HomeScreenContent extends StatelessWidget {
 
                   CategorizedMealsList(
                     meals: state.categorizedMeals,
+                    isLoading: state.isLoadingByCategory,
                     onMealClicked: (i) {
                       context.push("${AppRouts.mealDetails}/$i");
                     },

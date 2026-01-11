@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/entity/User.dart';
-import '../../domain/repository/UserRepository.dart';
+import '../../../domain/entity/User.dart';
+import '../../../domain/repository/UserRepository.dart';
 
 class AuthenticationCubit extends Cubit<void> {
   final UserRepository repository;
@@ -14,6 +14,4 @@ class AuthenticationCubit extends Cubit<void> {
 
     await repository.saveUser(User(firstName: trimmed));
   }
-
-
 }

@@ -1,6 +1,7 @@
 import 'package:deliveryapp_flutter/presentation/components/AppScaffold.dart';
 import 'package:deliveryapp_flutter/presentation/components/StatusRow.dart';
 import 'package:deliveryapp_flutter/presentation/navigation/GoRouter.dart';
+import 'package:deliveryapp_flutter/presentation/util/AppStrings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -32,7 +33,28 @@ class MyBasketScreen extends StatelessWidget {
                 ? CartTotal(
                     totalPrice: state.totalCartPrice,
                     onCheckoutClick: () {
-                      context.push(AppRouts.orderCompleted);
+                      di<MyBasketCubit>().cleanCart();
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          behavior: SnackBarBehavior.floating,
+
+                          backgroundColor: Color(0xFFFFA451),
+                          content: Text(
+                            "Order placed successfully!",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontFamily: AppStrings.fontFamily,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          duration: Duration(seconds: 2),
+                        ),
+                      );
+                      Future.delayed(const Duration(milliseconds: 500), () {
+                        context.push(AppRouts.orderCompleted);
+                      });
                     },
                   )
                 : null,
@@ -78,7 +100,7 @@ class CartItemsList extends StatelessWidget {
                 text: item.name,
                 subTitle: '${item.count} packs',
                 color: backgroundColors[index % backgroundColors.length],
-                image: AssetImage(item.imageUrl),
+                image: NetworkImage(item.imageUrl),
                 trailingIcon: PriceRow(price: item.price),
               ),
             ),
